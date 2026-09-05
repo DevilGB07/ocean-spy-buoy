@@ -9,13 +9,18 @@ export function useWebSocket(onEvent?: (event: WebSocketEvent) => void) {
 
   const connect = useCallback(() => {
     try {
-      // Determine protocol and host
-      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-      // In dev mode with vite proxy, we can connect directly to backend 8000 or via proxy
-      const wsUrl = `${protocol}//${window.location.hostname}:8000/ws/events`;
+      // Allow custom WebSocket URL (e.g. wss://ocean-spy-buoy.onrender.com/ws/events)
+      let wsUrl = import.meta.env.VITE_WS_URL;
+      if (!wsUrl) {
+        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        // If served from custom domain or dev server, fallback gracefully
+        const host = window.location.port === '5173' ? `${window.location.hostname}:8000` : window.location.host;
+        wsUrl = `${protocol}//${host}/ws/events`;
+      }
       
       const ws = new WebSocket(wsUrl);
       socketRef.current = ws;
+
 
       ws.onopen = () => {
         setIsConnected(true);

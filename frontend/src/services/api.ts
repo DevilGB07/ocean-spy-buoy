@@ -9,7 +9,8 @@ import {
   SystemSettings
 } from '../types';
 
-const API_BASE = '/api/v1';
+const SERVER_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+const API_BASE = `${SERVER_URL}/api/v1`;
 
 export async function getHealth(): Promise<{ status: string; mode: string; version: string; tagline: string; active_buoy: string }> {
   const res = await fetch(`${API_BASE}/health`);
@@ -24,7 +25,8 @@ export async function getBuoys(): Promise<Buoy[]> {
 }
 
 export async function getDetections(status?: string, limit = 50): Promise<Detection[]> {
-  const url = new URL(`${API_BASE}/detections`, window.location.origin);
+  const origin = SERVER_URL || window.location.origin;
+  const url = new URL(`${API_BASE}/detections`, origin);
   if (status) url.searchParams.append('status', status);
   url.searchParams.append('limit', limit.toString());
   
@@ -46,7 +48,8 @@ export async function getAISVessels(): Promise<AISVessel[]> {
 }
 
 export async function getAlerts(severity?: string, acknowledged?: boolean): Promise<Alert[]> {
-  const url = new URL(`${API_BASE}/alerts`, window.location.origin);
+  const origin = SERVER_URL || window.location.origin;
+  const url = new URL(`${API_BASE}/alerts`, origin);
   if (severity) url.searchParams.append('severity', severity);
   if (acknowledged !== undefined) url.searchParams.append('acknowledged', acknowledged.toString());
   
@@ -54,6 +57,7 @@ export async function getAlerts(severity?: string, acknowledged?: boolean): Prom
   if (!res.ok) throw new Error('Failed to fetch alerts');
   return res.json();
 }
+
 
 export async function acknowledgeAlert(id: number): Promise<Alert> {
   const res = await fetch(`${API_BASE}/alerts/${id}/acknowledge`, { method: 'PATCH' });
