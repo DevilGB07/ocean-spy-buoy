@@ -1,0 +1,42 @@
+[
+  {
+    "mmsi": "563912000",
+    "name": "MV Ocean Star",
+    "vessel_type": "Tanker",
+    "latitude": 19.0832,
+    "longitude": 72.8845,
+    "speed": 12.4,
+    "heading": 127.0,
+    "disclaimer": "Simulated AIS record for hackathon testing"
+  },
+  {
+    "mmsi": "235891040",
+    "name": "Pacific Falcon",
+    "vessel_type": "Cargo",
+    "latitude": 19.0795,
+    "longitude": 72.8720,
+    "speed": 14.1,
+    "heading": 210.0,
+    "disclaimer": "Simulated AIS record for hackathon testing"
+  },
+  {
+    "mmsi": "412890123",
+    "name": "Sea Harvester VII",
+    "vessel_type": "Fishing",
+    "latitude": 19.0550,
+    "longitude": 72.8550,
+    "speed": 7.2,
+    "heading": 45.0,
+    "disclaimer": "Simulated AIS record for hackathon testing"
+  },
+  {
+    "mmsi": "319200889",
+    "name": "Arabian Breeze",
+    "vessel_type": "Passenger",
+    "latitude": 19.0980,
+    "longitude": 72.8950,
+    "speed": 18.5,
+    "heading": 180.0,
+    "disclaimer": "Simulated AIS record for hackathon testing"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "scenario_1_verified": {
+    "name": "Scenario 1 — Verified Vessel",
+    "acoustic": "Tanker",
+    "ai_confidence": 0.91,
+    "ais": "Matching Tanker nearby",
+    "result": "VERIFIED VESSEL",
+    "risk": "LOW"
+  },
+  "scenario_2_mismatch": {
+    "name": "Scenario 2 — AIS Mismatch",
+    "acoustic": "Tanker",
+    "ai_confidence": 0.91,
+    "ais": "Cargo vessel nearby",
+    "result": "PHYSICAL/AIS DISCREPANCY",
+    "risk": "MEDIUM/HIGH"
+  },
+  "scenario_3_dark_vessel": {
+    "name": "Scenario 3 — Possible Dark Vessel",
+    "acoustic": "Tanker",
+    "ai_confidence": 0.91,
+    "ais": "No matching vessel",
+    "camera": "Vessel detected",
+    "result": "POSSIBLE DARK VESSEL",
+    "risk": 82,
+    "disclaimer": "Investigation required. Does not prove illegal activity."
+  }
+}

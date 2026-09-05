@@ -1,0 +1,30 @@
+{
+  "Tanker": {
+    "dominant_frequency_hz": 142.5,
+    "audio_level_db": -31.2,
+    "shaft_rate_rpm": 95,
+    "blade_count": 4,
+    "description": "Heavy low-frequency cavitation rumble with blade rate harmonic"
+  },
+  "Cargo": {
+    "dominant_frequency_hz": 185.0,
+    "audio_level_db": -34.8,
+    "shaft_rate_rpm": 120,
+    "blade_count": 5,
+    "description": "Medium-low rumble with continuous turbocharger auxiliary whir"
+  },
+  "Fishing": {
+    "dominant_frequency_hz": 340.0,
+    "audio_level_db": -42.1,
+    "shaft_rate_rpm": 380,
+    "blade_count": 3,
+    "description": "High-RPM diesel engine rhythm with intermittent winch hydraulic noise"
+  },
+  "Passenger": {
+    "dominant_frequency_hz": 260.0,
+    "audio_level_db": -38.5,
+    "shaft_rate_rpm": 240,
+    "blade_count": 4,
+    "description": "Dual-shaft high-speed waterjet propulsion signature"
+  }
+}

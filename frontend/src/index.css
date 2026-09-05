@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom tactical scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070D1F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E3260;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00F0FF;
+}
+
+/* Leaflet dark theme tweaks */
+.leaflet-container {
+  background-color: #050811 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #0C152F !important;
+  color: #F8FAFC !important;
+  border: 1px solid #1E3260 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7) !important;
+}
+
+.leaflet-popup-tip {
+  background: #0C152F !important;
+}
